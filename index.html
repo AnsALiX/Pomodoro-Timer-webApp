@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pomodoro Flow</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body data-mode="focus">
+    <main class="app-container">
+        
+        <header class="settings">
+            <div class="input-group">
+                <label for="focus-time">Focus (min)</label>
+                <input type="number" id="focus-time" value="2" min="1" max="120">
+            </div>
+            <div class="input-group">
+                <label for="break-time">Break (min)</label>
+                <input type="number" id="break-time" value="1" min="1" max="30">
+            </div>
+        </header>
+
+        <section class="timer-display">
+            <h1 id="time-label" class="time-label">02:00</h1>
+            <p id="mode-label" class="mode-label">Ready to Focus</p>
+        </section>
+
+        <nav class="controls">
+            <button id="primary-btn" class="btn primary">Start</button>
+            <button id="reset-btn" class="btn secondary">Reset</button>
+        </nav>
+
+        <section class="history">
+            <h2>Today's Sessions</h2>
+            <ul id="history-list">
+                </ul>
+        </section>
+
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>

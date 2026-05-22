@@ -1,0 +1,202 @@
+/* =========================================
+   1. BASE RESET & THEME VARIABLES
+   ========================================= */
+
+/* Reset standard browser spacing so our design is consistent */
+* { 
+    box-sizing: border-box; 
+    margin: 0; 
+    padding: 0; 
+}
+
+/* Define standard Focus colors (Red/Dark) */
+:root {
+    --bg-color: #fafaf9;
+    --text-main: #1c1917;
+    --text-muted: #78716c;
+    --accent: #ef4444; /* Focus Red */
+    --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+    --font-sans: system-ui, -apple-system, sans-serif;
+}
+
+/* Define Break colors (Green) - These take over automatically when HTML is data-mode="break" */
+body[data-mode="break"] {
+    --bg-color: #f0fdf4;
+    --text-main: #14532d;
+    --accent: #22c55e; /* Break Green */
+}
+
+
+/* =========================================
+   2. LAYOUT & ANIMATION
+   ========================================= */
+
+/* Center everything on the screen and animate color changes */
+body {
+    background-color: var(--bg-color);
+    color: var(--text-main);
+    font-family: var(--font-sans);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    /* This makes the color swap smooth instead of instant */
+    transition: background-color 0.5s ease, color 0.5s ease;
+}
+
+/* The main card holding the app */
+.app-container {
+    width: 100%;
+    max-width: 400px;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 2.5rem;
+}
+
+
+/* =========================================
+   3. SETTINGS & INPUTS
+   ========================================= */
+
+/* Space out the focus and break inputs */
+.settings {
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+}
+
+.input-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.3rem;
+    font-size: 0.875rem;
+    color: var(--text-muted);
+}
+
+.input-group input {
+    padding: 0.5rem;
+    border: 1px solid #d6d3d1;
+    border-radius: 6px;
+    background: transparent;
+    font-family: var(--font-sans);
+    font-size: 1rem;
+}
+
+
+/* =========================================
+   4. TIMER DISPLAY
+   ========================================= */
+
+.timer-display {
+    text-align: center;
+}
+
+/* Big Timer Text */
+.time-label {
+    /* Monospace ensures numbers don't jump around as they tick down */
+    font-family: var(--font-mono);
+    font-size: 5.5rem;
+    font-weight: 700;
+    line-height: 1;
+    letter-spacing: -2px;
+}
+
+/* The text below the timer ("Ready to Focus", etc.) */
+.mode-label {
+    margin-top: 0.5rem;
+    font-size: 1.125rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--accent); /* Uses the active theme color */
+    font-weight: 600;
+}
+
+
+/* =========================================
+   5. CONTROLS (BUTTONS)
+   ========================================= */
+
+.controls {
+    display: flex;
+    gap: 1rem;
+}
+
+.btn {
+    flex: 1;
+    padding: 1rem;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.125rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: transform 0.1s, opacity 0.2s;
+}
+
+/* Pushes the button down slightly when clicked for a tactile feel */
+.btn:active { 
+    transform: scale(0.96); 
+}
+
+/* Start/Pause button */
+.btn.primary {
+    background-color: var(--accent);
+    color: white;
+}
+
+/* Reset button */
+.btn.secondary {
+    background-color: transparent;
+    color: var(--text-main);
+    border: 2px solid #d6d3d1;
+}
+
+
+/* =========================================
+   6. HISTORY SECTION
+   ========================================= */
+
+.history {
+    margin-top: 1rem;
+    border-top: 1px solid #d6d3d1;
+    padding-top: 1.5rem;
+}
+
+.history h2 {
+    font-size: 1rem;
+    color: var(--text-muted);
+    margin-bottom: 1rem;
+}
+
+#history-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+/* Individual history items */
+#history-list li {
+    font-size: 0.95rem;
+    padding: 0.6rem;
+    background: rgba(0, 0, 0, 0.04);
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    color: var(--text-main);
+}
+
+
+/* =========================================
+   7. RESPONSIVE DESIGN (MOBILE)
+   ========================================= */
+
+/* Make the timer fit better on smaller phone screens */
+@media (max-width: 380px) {
+    .time-label { 
+        font-size: 4.5rem; 
+    }
+    .app-container { 
+        padding: 1.5rem; 
+    }
+}
