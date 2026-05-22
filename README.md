@@ -5,7 +5,7 @@ A lightweight, single-screen Pomodoro timer built with vanilla HTML, CSS, and Ja
 It features configurable focus and break periods, smooth visual state transitions, an audible chime, and a daily session history that persists across page reloads.
 
 ### Live Demo
-🚀 **[View Live App on Vercel]([YOUR_VERCEL_URL_HERE])**
+🚀 **[View Live App on Vercel](pomodoro-timer-web-app-eta.vercel.app)**
 
 ### How to Run Locally
 Because this project is built with vanilla web technologies, there is no build step or package manager required. 

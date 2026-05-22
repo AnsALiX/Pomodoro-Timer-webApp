@@ -4,10 +4,10 @@
 [cite_start]Since I built this with plain HTML, CSS, and JS, there's no build step or `npm install` needed[cite: 8, 9]. 
 
 **To run locally:**
-1. Clone the repo: `git clone [YOUR_REPO_URL_HERE]`
+1. Clone the repo: `git clone https://github.com/AnsALiX/Pomodoro-Timer-webApp.git`
 2. Open the folder and just double-click the `index.html` file to run it in your browser. 
 
-**Deployed URL:** [YOUR_VERCEL_URL_HERE]
+**Deployed URL:** pomodoro-timer-web-app-eta.vercel.app
 
 ### 2. Stack & design choices
 [cite_start]**Stack:** I went with vanilla HTML, CSS, and JavaScript[cite: 3]. For a single-screen timer, setting up a framework like React or Vue felt like overkill and I wanted to keep it lightweight.
